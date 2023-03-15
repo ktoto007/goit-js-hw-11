@@ -18,7 +18,7 @@ async function A(e) {
   fetchesImages.newParametr = refs.form.searchQuery.value;
   fetchesImages.newPage = 1;
 
-  resolve = await fetchesImages.fetchImages();
+  const resolve = await fetchesImages.fetchImages();
 
   if (resolve.hits.length == 0) {
     Notify.failure(
@@ -47,7 +47,7 @@ refs.loadMoreButton.addEventListener('click', B);
 async function B() {
   fetchesImages.newPage += 1;
 
-  resolve = await fetchesImages.fetchImages();
+  const resolve = await fetchesImages.fetchImages();
 
   renderingAndAddingGalleries(resolve.hits);
 
